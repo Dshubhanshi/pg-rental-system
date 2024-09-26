@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<center><h2>Proceed to Payment:.</h2>
+	<pre  style='width: fit-content;'>Total Booking Amount:	{{ price }}</pre>
+<a href="/booking_success" class='btn btn-primary'>Pay</a>	
+<a href="/{{ object.id }}/delete" class='btn btn-primary'>Cancel Booking</a>
+{% endblock content %}

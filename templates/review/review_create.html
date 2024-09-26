@@ -1,0 +1,19 @@
+{% load crispy_forms_tags %}
+{% block content %}
+<div class='col-sm-6 col-sm-offset-4'>
+<h1>{{ title }}</h1>
+<hr/>
+{% if request.user.is_authenticated %}
+<form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+{{ form|crispy }}
+<input class='btn btn-default' type='submit' value='Post a review'></a>
+</form>
+{% else %}
+<p>You must login to write a review </p>
+<a href="/login" class='btn btn-default'>Login</a>
+{% endif %}
+</div>
+{% endblock %}
+{% include "index.html" %}
+
+

@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br/><br/><br/><br/>
+<h2>Booking Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname" required><br>
+
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname" required><br>
+
+        <label for="pg_type">PG Type:</label><br>
+        <select id="pg_type" name="pg_type" required>
+            {% for choice in PG_TYPE_CHOICES %}
+            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="no_of_person">Number of Persons:</label><br>
+        <select id="no_of_person" name="no_of_person" required>
+            {% for choice in PERSON_CHOICES %}
+            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label>Facilities:</label><br>
+        <input type="checkbox" id="wifi" name="wifi">
+        <label for="wifi">WiFi</label><br>
+        <input type="checkbox" id="laundry" name="laundry">
+        <label for="laundry">Laundry</label><br>
+        <input type="checkbox" id="food" name="food">
+        <label for="food">Food</label><br>
+        <input type="checkbox" id="maid" name="maid">
+        <label for="maid">Maid Service</label><br>
+
+        <label for="arrival_date">Arrival Date:</label><br>
+        <input type="date" id="arrival_date" name="arrival_date" required><br>
+
+        <label for="departure_date">Departure Date:</label><br>
+        <input type="date" id="departure_date" name="departure_date" required><br>
+
+        <label for="gender">Gender:</label><br>
+        <input type="text" id="gender" name="gender" required><br>
+
+        <label for="sharing">Sharing:</label><br>
+        <input type="text" id="sharing" name="sharing" required><br>
+
+        <label for="price">Price:</label><br>
+        <input type="text" id="price" name="price"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

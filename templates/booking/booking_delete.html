@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block content %}
+<br/><br/>
+<h1>Delete Booking</h1>
+<form method='POST' action=".">{% csrf_token %}
+Are you sure you want to delete booking of {{object.fname}}?
+<input type="submit" value="Yes" class='btn btn-warning'></input>
+<a href="/{{object.id}}" class='btn btn-warning'>Cancel</a>
+</form>
+{% endblock %}

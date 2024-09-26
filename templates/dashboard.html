@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+   <div class="container">
+    <h1>User Dashboard</h1>
+    <div class="pg-details">
+        <h2>PG Booking Details</h2>
+
+        <!-- Here you can display the details of the PG booking -->
+        <p>your room booked successfully.<span id="pg-count"></span></p>
+        {% for b in bookings %}
+        <p>PG Details:</p>
+        <ul>
+            <li>PG 1: {{ b.id }} ---- {{ b.check_in_date }}--{{ b.check_out_date }}--{{ b.pg_id }}---{{ b.no_of_rooms }}Address, Contact, Price, etc.</li>
+            <li>PG 2: Address, Contact, Price, etc.</li>
+            <!-- Add more PG details as needed -->
+        </ul>
+        {% endfor %}
+    </div>
+  
+</div>
+<a href="{% url 'logout' %}" style="display: block; width: 100px; margin: 20px auto; padding: 10px; background-color: #007bff; color: #fff; text-align: center; text-decoration: none; border: none; border-radius: 5px; cursor: pointer;">Logout</a>
+
+{% endblock content %}

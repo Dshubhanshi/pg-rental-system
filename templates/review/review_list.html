@@ -1,0 +1,19 @@
+{% block content %}
+<br/><br/><br/><br/><br/>
+<div class='col-sm-6 col-sm-offset-3'>
+<h2>Review List</h2>
+{% for object in object_list %}	
+<ul>
+    <pre><b>Name:</b>	{{ object.fname }}</pre>
+    <pre><b>PG Type:</b> 	{{ object.pg_type }}</pre>
+    <pre><b>Comfort:</b> 	{{ object.comfort }}</pre>
+    <pre><b>Cost:</b> 	{{ object.cost }}</pre>
+    <pre><b>Quality:</b> 	{{ object.quality }}</pre>
+    <p>======================================================================</p>
+</ul>
+{% endfor %}
+<a href="/review_create" class='btn btn-primary'>write a review</a>
+</div>
+{% endblock content %}
+{% include "index.html" %}
+{% load crispy_forms_tags %}

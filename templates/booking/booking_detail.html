@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br/><br/>
+<div class='col-sm-6 col-sm-offset-3'>
+    {% if not "/accounts/login" in request.get_full_path %}
+    {% endif %}
+	<h2>Booking Details</h2>
+<ul>
+    <pre><b>First Name:</b>	{{ object.fname }}</pre>
+    <pre><b>Last Name:</b>	{{ object.lname }}</pre>
+    <pre><b>PG Type:</b> 	{{ object.pg_type }}</pre>
+    <pre><b>No of Person:</b> 	{{ object.no_of_person }}</pre>
+
+    {% if object.wifi == True %}
+    <pre ><b>Wifi:</b>           &#9989;</pre>
+    {% else %}
+    <pre ><b>Wifi:</b>           &#10008;</pre>
+    {% endif %}
+
+    {% if object.loundry == True %}
+    <pre><b>Loundry:</b>        &#9989;</pre>
+    {% else %}
+    <pre><b>Loundry:</b>        &#10008;</pre>
+    {% endif %}
+
+    {% if object.food == True %}
+    <pre><b>Food:</b>           &#9989;</pre>
+    {% else %}
+    <pre><b>Food:</b>           &#10008;</pre>
+    {% endif %}
+
+    {% if object.maid == True %}
+    <pre><b>Maid:</b>           &#9989;</pre>
+    {% else %}
+    <pre><b>Maid:</b>           &#10008;</pre>
+    {% endif %}
+
+    <pre><b>Arrival Date:</b>	{{ object.arrival_date }}</pre>
+    <pre><b>Departure Date:</b>	{{ object.departure_date }}</pre>
+    <pre><b>Gender:</b>		{{ object.gender }}</pre>
+    <pre><b>Sharing:</b>	{{ object.sharing }}</pre>
+    <pre><b>Price:</b>		{{ object.price }}</h4></pre>
+</ul>
+<a href="/checkout" class='btn btn-warning'>Proceed to Payment</a>
+<a href="/{{ object.id }}/update" class='btn btn-warning'>Update Details</a>
+<a href="/{{ object.id }}/delete" class='btn btn-warning'>Cancel Booking</a>
+</div>
+{% endblock content %}

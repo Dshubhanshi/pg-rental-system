@@ -1,0 +1,333 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>StayEasy</title>
+    
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="../static/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="../static/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="../static/img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!--[if lte IE 8]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+    <![endif]-->
+    
+     <div class="layer"></div>
+    <!-- Mobile menu overlay mask -->
+    
+    <div id="preloader">
+        <div data-loader="circle-side"></div>
+    </div><!-- End Preload -->
+    
+     <!-- Header ================================================== -->
+    <header>
+    <div class="container">
+        <div class="row">
+            <div class="col--md-3 col-sm-3 col-xs-3">
+                <a href="{% url 'app:home' %}" id="logo">
+                <img src="../static/img/logo.png" width="190" height="23" alt="" data-retina="true">
+                </a>
+            </div>
+            <nav class="col--md-9 col-sm-9 col-xs-9">
+            <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="{% static 'js/javascript:void(0);' %}"><span>Menu mobile</span></a>
+            <div class="main-menu">
+                <div id="header_menu">
+                     <img src="../static/img/logo_m.png" width="141" height="40" alt="" data-retina="true">
+                </div>
+                <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
+                 <ul>
+                    <li class="submenu">
+                    <a href="{% url 'app:home' %}">Home</a>
+                    </li>
+                   
+                    <li class="submenu">
+                    <a href="{% static 'js/javascript:void(0);' %}" class="show-submenu">Pages<i class="icon-down-open-mini"></i></a>
+                    <ul>
+                      
+                        <li><a href="/about">About us</a></li>
+                        <li><a href="/faq">Faq</a></li>
+                        <li><a href="/gallery">gallery</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="{% url 'check_availibility' %}">Check Availibility</a></li>
+                     <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'contact_us' %}">Contact us</a></li>
+                </ul>
+            </div><!-- End main-menu -->
+            
+            </nav>
+        </div><!-- End row -->
+    </div><!-- End container -->
+    </header>
+    <!-- End Header =============================================== -->
+    
+    <!-- SubHeader =============================================== -->
+    <section class="parallax-window" id="short" data-parallax="scroll" data-image-src="../static/img/sub_header_short_2.jpg" data-natural-width="1400" data-natural-height="350">
+        <div id="subheader">
+            <h1>Your Querries</h1>
+    </div><!-- End subheader -->
+    </section><!-- End section -->
+    <!-- End SubHeader ============================================ -->
+    
+    <!-- Content ================================================== -->
+        <div class="container margin_60_35">
+            <div class="row">
+            
+            <div class="col-md-3" id="sidebar">
+            <div class="theiaStickySidebar">
+                <div id="faq_box">
+                    <ul id="cat_nav">
+                        <li><a href="#payment" class="active">Payments</a></li>
+                        <li><a href="#works">How it works</a></li>
+                        <li><a href="#register_2">Registration</a></li>
+                        <li><a href="#cancelation">Cancelation</a></li>
+                    </ul>
+                </div><!-- End box_style_1 -->
+                </div><!-- End theiaStickySidebar -->
+             </div><!-- End col-md-3 -->
+                
+                <div class="col-md-9">
+                <h3 class="nomargin_top">Payments</h3>
+                 
+                 <div class="panel-group" id="payment">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#payment" href="#collapseOne">How can we do our payments ?<i class="indicator icon_set_1_icon-11 pull-right"></i></a>
+                              </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                For the payment, first of all you have to check the room details. And then you have to fill the form of the booking for that perticularly room. When you fill that form for the perticularly room or flate or home then we inform the owner and then you can see that property and meet with the owner too. And you can pay face to face.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#payment" href="#collapseTwo">Can we pay online ?<i class="indicator icon_set_1_icon-11 pull-right"></i></a>
+                              </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                Yes, Ofcourse you also can make a payment at online too. We also help for the online payment too. You can chek for that too.
+                              </div>
+                            </div>
+                          </div>
+                          
+                        </div><!-- End panel-group -->
+                        
+                        <h3>How it works</h3>
+                 
+                 <div class="panel-group" id="works">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#works" href="#collapseOne_works">How this site can helps us ?<i class="indicator icon_set_1_icon-11 pull-right"></i></a>
+                              </h4>
+                            </div>
+                            <div id="collapseOne_works" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                This web application is helping the student and the working people who cant live with their family due to their study and job problem. For that we can help then to find their rooms. You can find your room or home or flate whatever property you like for the living and also can book online from here. And meet with the owner and confirm the booking.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#works" href="#collapseTwo_works">If i want to take a room and when i go somewhere how can you help me through it ?<i class="indicator icon_set_1_icon-11 pull-right"></i></a>
+                              </h4>
+                            </div>
+                            <div id="collapseTwo_works" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                For that purpouse we can help you with our extra facility which is transportation. You can take that facility as a extra facility and also you can share it with your roommates. We are happy to help you.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#works" href="#collapseThree_works">How can we know that is there any temple or theater near my room ?<i class="indicator icon_set_1_icon-11 pull-right"></i></a>
+                              </h4>
+                            </div>
+                            <div id="collapseThree_works" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                We also gave you a extra features like a filter search. With the help of this feature you can see or search near attractions like temples, masjids, theators, etc.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#works" href="#collapseThree_works">When i came to your room for a stay can you help me through my stuff ?<i class="indicator icon_set_1_icon-11 pull-right"></i></a>
+                              </h4>
+                            </div>
+                            <div id="collapseThree_works" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                Yes, We also plan for the feature like a packers and movers. With the help of this feature we would give you a person with a vehicle who can help you with your luggage.
+                              </div>
+                            </div>  
+                          </div>
+                        </div><!-- End panel-group -->
+                                              
+                        <h3>Register</h3>
+                 
+                        <div class="panel-group" id="register_2">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#register_2" href="#collapseOne_register">Is There compulsary to registster for to check the room details ?<i class="indicator icon_set_1_icon-11 pull-right"></i></a>
+                              </h4>
+                            </div>
+                            <div id="collapseOne_register" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                Yes ofcourse, It is necessary to register or login if you want to check a property facilities or the details of the room and also for book a room. Beacause of our secutiry peropse it is necessary to register or login to our page. 
+                              </div>
+                            </div>
+                          </div>
+                          
+                        </div><!-- End panel-group -->
+                        
+                        <h3>Cancelation</h3>
+                 
+                        <div class="panel-group" id="pricing">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#pricing" href="#collapseOne_pricing">Anim pariatur cliche reprehenderit?<i class="indicator icon_set_1_icon-11 pull-right"></i></a>
+                              </h4>
+                            </div>
+                            <div id="collapseOne_pricing" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                              </div>
+                            </div>
+                          </div>
+                         
+                        </div><!-- End panel-group -->
+                        
+                </div><!-- End col-md-9 -->
+            </div><!-- End row -->
+        </div><!-- End container -->
+        <!-- End Content =============================================== -->
+<section class="promo_full">
+    <div class="promo_full_wp">
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="carousel_testimonials">
+                        
+                            
+                        </div><!-- End carousel_testimonials -->
+                    </div><!-- End col-md-8 -->
+                </div><!-- End row -->
+            </div><!-- End container -->
+        </div><!-- End promo_full_wp -->
+    </div><!-- End promo_full -->
+    </section><!-- End section -->   
+
+     <footer >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <img src="../static/img/logo_footer.png" width="141" height="40" alt="" id="logo_footer" data-retina="true">
+                    <ul id="contact_details_footer">
+                        <li>Route de Sablet 1023, Marseille<br>France 01923</li>
+                        <li><a href="tel://004542344599">+45 423 445 99</a> / <a href="#0"><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></li>
+                    </ul>  
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="/about">About us</a></li>
+                        <li><a href="{% url 'contact_us' %}">Contact us</a></li>
+                        <li><a href="/gallery">gallery</a></li>
+                    </ul>
+                </div>                
+                <div class="col-md-3 col-sm-4">
+                   
+                </div>
+                <div class="col-md-3 col-sm-4"  id="newsletter">
+                    <h3>News letter</h3>
+                    <p>Join our news letter to keep be informed about offers and news.</p>
+                    <div id="message-newsletter_2"></div>
+                        <form method="post" action="assets/newsletter.php" name="newsletter_2" id="newsletter_2">
+                        <div class="form-group">
+                            <input name="email_newsletter_2" id="email_newsletter_2"  type="email" value=""  placeholder="Your mail" class="form-control">
+                          </div>
+                            <input type="submit" value="Subscribe" class="btn_1 white" id="submit-newsletter_2">
+                        </form>
+                </div>
+            </div><!-- End row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="social_footer">
+                        <ul>
+                            <li><a href="https://www.facebook.com/"><i class="icon-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/login?lang=en"><i class="icon-twitter"></i></a></li>
+                            <li><a href="https://www.google.co.in/"><i class="icon-google"></i></a></li>
+                            <li><a href="https://www.instagram.com/accounts/login/"><i class="icon-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/"><i class="icon-youtube-play"></i></a></li>
+                        </ul>
+                          <p>Copyright © 2018 <a target="_blank" title="Free CSS Themes" href="http://freecssthemes.com/"></a>  |  All Right Reserved</p>
+
+                    </div>
+                </div>
+            </div><!-- End row -->
+        </div><!-- End container -->
+    </footer><!-- End footer -->
+
+<div id="toTop"></div><!-- Back to top button -->
+    
+<!-- COMMON SCRIPTS -->
+<script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+<script src="{% static 'js/common_scripts_min.js' %}"></script>
+<script src="{% static 'js/validate.js' %}"></script>
+<script src="{% static 'js/functions.js' %}"></script>
+
+<!-- SPECIFIC SCRIPTS -->
+<script src="{% static 'js/theia-sticky-sidebar.js' %}"></script>
+<script>
+    jQuery('#sidebar').theiaStickySidebar({
+      additionalMarginTop: 80
+    });
+</script>
+<script>
+ $(function() {
+	 'use strict';
+	  $('#faq_box a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top - 120
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+
+<br/><br/><br/><br/><br/>
+{% block content %}
+<div class='col-sm-6 col-sm-offset-3'>
+    <h1>Check  Availability result</h1>
+    {% for availability in availabilities %}
+    <div class="availability">
+        <h3>{{ availability.pg_type }} - {{ availability.area }}</h3>
+        <p><strong>Available From:</strong> {{ availability.available_from }}</p>
+        <p><strong>Available To:</strong> {{ availability.available_to }}</p>
+        <form action="{% url 'bookingssss' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="pg_id" id="pg_id" value="{{ availability.id }}">
+            <input type="submit" value="Book Now">
+        </form>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

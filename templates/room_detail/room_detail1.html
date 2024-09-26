@@ -1,0 +1,96 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<link href="../static/css/base.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../static/css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="../static/css/owl.theme.default.css"> 
+<div class="carousel_in">
+      <div><img src="../static/img/room_detail_1.jpg" alt=""><div class="caption"><h3> Badroom</h3></div></div>
+      <div><img src="../static/img/room_detail_6.jpg" alt=""><div class="caption"><h3>Living room</h3></div></div>
+      <div><img src="../static/img/room_detail_5.jpg" alt=""><div class="caption"><h3>Bathroom</h3></div></div>
+    </div>
+<h1 class="main_title_in">2* P.G.</h1>
+{% for object in object_list %} 
+<div class="col-xs-3" style="min-height: 450px; margin-top: 20px">
+<a href="#" data-toggle="modal" data-target="#abc" ><img  style="height: 150px; width: 250px" src="../media/{{object.image}}" id = "img"></a>
+<ul style="margin: 0; padding: 0; margin-left: 15px;">
+    <li>Name:{{object.name}}</li>
+    <li>Email:{{object.email}}</li>
+    <li>Pg Type:{{object.pg_type}}</li>
+    <li style="min-height: 50px;">{{object.description}}</li>
+    <li>Price: {{object.price}}</li>
+    <li>Sharing:{{object.sharing}}</li>
+    {% if object.loundry == True %}
+    <li>Loundry: &#9989;</li>
+    {% else %}
+    <li>Loundry: &#10008;</li>
+    {% endif %}
+    {% if object.food == True %}
+    <li>Food: &#9989;</li>
+    {% else %}
+    <li>Food: &#10008;</li>
+    {% endif %}
+    {% if object.maid == True %}
+    <li>Maid: &#9989;</li>
+    {% else %}
+    <li>Maid: &#10008;</li>
+    {% endif %}
+    {% if object.wifi == True %}
+    <li>Wifi: &#9989;</li>
+    {% else %}
+    <li>Wifi: &#10008;</li>
+    {% endif %}
+</ul>
+<a href="/booking" class="btn btn-primary">Book Now</a>
+<a href="/review_list/2star" class="btn btn-primary">Review</a>
+</div>
+<div class="modal fade" id="abc" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="min-height:200px;">
+
+            <!-- <div class="modal-header"><h1>name</h1></div> -->
+            <div class="modal-body">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                      {% for image in images %}
+                    <div class="item active">
+                      <img src="/media/{{image.image}}" class="img-responsive">
+                      <div class="carousel-caption">
+                      </div>
+                    </div>
+                    <br/>
+                    {% endfor %}
+                  </div>
+                </div>
+            </div>           
+            <div class="modal-footer"><a href="/booking" class="btn btn-primary">Book Now</a></div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<script src="../static/js/jquery-1.11.2.min.js"></script>
+<script src="../static/js/common_scripts_min.js"></script>
+<script src="../static/js/validate.js"></script>
+<script src="../static/js/functions.js"></script>
+<script>
+  $('.carousel_in').owlCarousel({
+    center: true,
+    items:1,
+    loop:true,
+     autoplay:true,
+     navText: [ '', '' ],
+    addClassActive: true,
+    margin:5,
+    responsive:{
+        600:{
+            items:1
+        },
+         1000:{
+            items:2,
+            nav:true,
+        }
+    }
+});
+</script>
+{% endblock content %}

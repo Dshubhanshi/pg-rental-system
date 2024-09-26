@@ -1,0 +1,35 @@
+from django.urls import path
+from SEapp.views import (home, login_view, register_view, 
+                       logout_view, review_list, review_list1, 
+                       review_list2, review_list3, review_list4,
+                       booking_detail, booking_update, booking_delete, 
+                       room_detail, room_detail1, room_detail2, 
+                       room_detail3, about, gallery, 
+                       blog, faq, check_availibility, 
+                       room_details,bookingssss,dashboard)
+from . import views
+
+urlpatterns = [
+    path('', home, name='home'),
+    path('review_list/', review_list, name='review_list'),
+    path('review_list/1star/', review_list1, name='review_list1'),
+    path('review_list/2star/', review_list2, name='review_list2'),
+    path('review_list/3star/', review_list3, name='review_list3'),
+    path('review_list/4star/', review_list4, name='review_list4'),
+    path('<int:id>/', booking_detail, name='booking_detail'),
+    path('<int:id>/update/', booking_update, name='booking_update'),
+    path('<int:id>/delete/', booking_delete, name='booking_delete'),
+    path('login/', login_view, name='login'),
+    path('dashboard/',dashboard, name="dashboard"),
+    path('logout/', logout_view, name='logout'),
+    path('room_details/', room_details, name='room_details'),
+    path('room_detail1/', room_detail1, name='room_detail1'),
+    path('room_detail2/', room_detail2, name='room_detail2'),
+    path('room_detail3/', room_detail3, name='room_detail3'),
+    path('about/', about, name='about'),
+    path('gallery/', gallery, name='gallery'),
+    path('blog/', blog, name='blog'),
+    path('faq/', faq, name='faq'),
+    path('check_availibility/', check_availibility, name='check_availibility'),
+    path('booking',bookingssss,name="bookingssss"),
+]   
